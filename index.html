@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatBot Project</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <!-- Landing Page Content -->
+  <header class="hero">
+    <h1>💬 Welcome to My ChatBot Project</h1>
+    <p>Your personal assistant powered by AI – click the chat icon below to start chatting!</p>
+  </header>
+
+  <section class="info-section">
+    <div class="info-card">
+      <h2>⚡ Real-Time Conversations</h2>
+      <p>Ask anything and get instant responses.</p>
+    </div>
+    <div class="info-card">
+      <h2>🤖 AI-Powered</h2>
+      <p>Powered by Gemini API for smart answers.</p>
+    </div>
+    <div class="info-card">
+      <h2>🌐 Available 24/7</h2>
+      <p>Always online, ready to assist you.</p>
+    </div>
+  </section>
+
+  <!-- Floating Chat Icon -->
+  <div id="chatbot-icon" title="Chat with us">💬</div>
+
+  <!-- Chatbot Window -->
+  <div id="chatbot-container" class="hidden">
+    <div id="chatbot-header">
+      <span>💡 ChatBot Assistant</span>
+      <button id="close-btn">&times;</button>
+    </div>
+
+    <div id="chatbot-body">
+      <div id="chatbot-messages"></div>
+      <div id="typing-indicator" class="hidden">Bot is typing...</div>
+    </div>
+
+    <div id="chatbot-input-container">
+      <input type="text" id="chatbot-input" placeholder="Type a message..." />
+      <button id="send-btn">➤</button>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
