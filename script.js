@@ -31,14 +31,31 @@ function sendMessage() {
   }
 }
 
+// function appendMessage(sender, message) {
+//   const messageContainer = document.getElementById("chatbot-messages");
+//   const messageElement = document.createElement("div");
+//   messageElement.classList.add("message", sender);
+//   messageElement.textContent = message;
+//   messageContainer.appendChild(messageElement);
+//   messageContainer.scrollTop = messageContainer.scrollHeight;
+// }
+
 function appendMessage(sender, message) {
   const messageContainer = document.getElementById("chatbot-messages");
   const messageElement = document.createElement("div");
   messageElement.classList.add("message", sender);
-  messageElement.textContent = message;
+
+  // Format response: remove extra line breaks & trim spaces
+  const formattedMessage = message
+    .replace(/\n{2,}/g, "<br><br>") // Convert multiple newlines into paragraph breaks
+    .replace(/\n/g, "<br>")         // Convert single newline to line break
+    .trim();
+
+  messageElement.innerHTML = formattedMessage; // use innerHTML instead of textContent
   messageContainer.appendChild(messageElement);
   messageContainer.scrollTop = messageContainer.scrollHeight;
 }
+
 
 async function getBotResponse(userMessage) {
   const API_KEY = "AIzaSyCd__nElxDtBOVGyZJhfACKlYx_IYTe9t0"; //process.env.GEMINI_API_KEY;
