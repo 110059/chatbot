@@ -31,15 +31,6 @@ function sendMessage() {
   }
 }
 
-// function appendMessage(sender, message) {
-//   const messageContainer = document.getElementById("chatbot-messages");
-//   const messageElement = document.createElement("div");
-//   messageElement.classList.add("message", sender);
-//   messageElement.textContent = message;
-//   messageContainer.appendChild(messageElement);
-//   messageContainer.scrollTop = messageContainer.scrollHeight;
-// }
-
 function appendMessage(sender, message) {
   const messageContainer = document.getElementById("chatbot-messages");
   const messageElement = document.createElement("div");
@@ -58,7 +49,7 @@ function appendMessage(sender, message) {
 
 
 async function getBotResponse(userMessage) {
-  const API_KEY = "AIzaSyCd__nElxDtBOVGyZJhfACKlYx_IYTe9t0"; //process.env.GEMINI_API_KEY;
+  const API_KEY = "your api key here"; //process.env.GEMINI_API_KEY;
 
   const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
 
